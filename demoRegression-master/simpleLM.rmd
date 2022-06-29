@@ -50,7 +50,20 @@ new <- data.frame(CHEST=c(17,22,26))
 predict(chesty,new)
 predict(chesty,new,se.fit=TRUE)
 ```
-  
+
+```{r}
+HL<- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(HL)
+summary.lm(HL)
+```  
+
+
+```{r}
+new <- data.frame(HEADLEN=c(17,22,26))
+predict(HL,new)
+predict(HL,new,se.fit=TRUE)
+```
 
 
 The adjusted R-square is .84 which is better than all the models. The best model is the one based on head length. 
