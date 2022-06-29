@@ -39,14 +39,18 @@ predict(simp,new,se.fit=TRUE)
 ```{r}
 chesty <- lm(LENGTH~CHEST,data=bears)
 plot(LENGTH~CHEST,data=bears)
-abline(simp)
-summary.lm(simp)
+abline(chesty)
+summary.lm(chesty)
 ```
-
+  
+The adjusted R-square for this model (CHEST) is 0.79; the model for the NECK has an adjusted R-square of 0.75
 
 ```{r}
-new <- data.frame(NECK=c(17,22,26))
-predict(simp,new)
-predict(simp,new,se.fit=TRUE)
-``
+new <- data.frame(CHEST=c(17,22,26))
+predict(chesty,new)
+predict(chesty,new,se.fit=TRUE)
+```
+  
 
+
+The adjusted R-square is .84 which is better than all the models. The best model is the one based on head length. 
