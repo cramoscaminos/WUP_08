@@ -23,8 +23,10 @@ plot(LENGTH~NECK,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
+  
+## now predict the length of a bear who has a neck of 17, 22 and 26  
 
-## now predict the length of a bear who has a neck of 17, 22 and 26
+Neck diameter is useful for predicting the length of bear.
 
 
 ```{r}
@@ -32,5 +34,19 @@ new <- data.frame(NECK=c(17,22,26))
 predict(simp,new)
 predict(simp,new,se.fit=TRUE)
 ```
-## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
+## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better). 
+
+```{r}
+chesty <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+
+```{r}
+new <- data.frame(NECK=c(17,22,26))
+predict(simp,new)
+predict(simp,new,se.fit=TRUE)
+``
 
