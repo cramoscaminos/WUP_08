@@ -24,7 +24,7 @@ abline(simp)
 summary.lm(simp)
 ```
   
-Neck diameter is useful for predicting the length of the bear. In this graph the the larger the neck circumference the larger the length of the bear.  This graph shows a positive slope indicating that in fact the larger the neck circumference the longer the length of the bear.  For every inch increase in the neck circumference will result in 1.65 increase in the length of the bear,
+Neck diameter is useful for predicting the length of the bear. In this graph the the larger the neck circumference the larger the length of the bear.  This graph shows a positive slope indicating that in fact the larger the neck circumference the longer the length of the bear.  For every inch increase in the neck circumference will result in 1.65 increase in the length of the bear. The adjusted R-squared is .7476.
 
 ## now predict the length of a bear who has a neck of 17, 22 and 26  
 
@@ -33,6 +33,7 @@ new <- data.frame(NECK=c(17,22,26))
 predict(simp,new)
 predict(simp,new,se.fit=TRUE)
 ```
+The adjusted R square is .74  
   
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better). 
 
@@ -43,7 +44,7 @@ abline(chesty)
 summary.lm(chesty)
 ```
   
-The adjusted R-square for this model (CHEST) is 0.79; the model for the NECK has an adjusted R-square of 0.75
+The adjusted R-square for this model (CHEST) is 0.79; the model for the NECK has an adjusted R-square of 0.75. There is not much difference, and this chest model also shows  a positive slope showing that the larger the chest size the longer the negth of the bear. 
 
 ```{r}
 new <- data.frame(CHEST=c(17,22,26))
